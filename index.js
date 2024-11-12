@@ -19,7 +19,12 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, { cors: { origin: '*' } });
 // Middleware
-app.use(cors()); // Enable CORS for all routes
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
+})); // Enable CORS for all routes
 app.use(bodyParser.json()); // Parse JSON bodies
 
 // Middleware to pass io to routes

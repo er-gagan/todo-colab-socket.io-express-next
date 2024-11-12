@@ -143,9 +143,9 @@ const View = ({ isOpen, toggleDrawer, userData }: any) => {
                                         </tr>
                                     </thead>
                                     <tbody className="bg-white divide-y divide-gray-100">
-                                        {teamMembers.map((item: any) => (
+                                        {teamMembers.map((item: any, key: number) => (
 
-                                            <tr className="hover:bg-gray-50 transition duration-150">
+                                            <tr className="hover:bg-gray-50 transition duration-150" key={key}>
                                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{item.name}</td>
                                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{item.email}</td>
                                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{getDateFromISO8601({ isoDate: item.createdAt })}</td>
@@ -160,9 +160,9 @@ const View = ({ isOpen, toggleDrawer, userData }: any) => {
 
                     {userData.userRole === "regular-user" && teamData.length > 0 && (<>
                         <h2 className="text-xl font-semibold text-gray-800 mb-3 mt-6">Teams</h2>
-                        {teamData.map((item: any) => (<>
+                        {teamData.map((item: any, key: number) => (<>
 
-                            <Card className='my-5'>
+                            <Card className='my-5' key={key}>
                                 <CardBody>
 
                                     <div className="container mx-auto mt-6">
@@ -198,9 +198,9 @@ const View = ({ isOpen, toggleDrawer, userData }: any) => {
                                                         </tr>
                                                     </thead>
                                                     <tbody className="bg-white divide-y divide-gray-100">
-                                                        {item.members.map((item: any) => (
+                                                        {item.members.map((item: any, key: number) => (
 
-                                                            <tr className="hover:bg-gray-50 transition duration-150">
+                                                            <tr className="hover:bg-gray-50 transition duration-150" key={key}>
                                                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{item.name}</td>
                                                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{item.email}</td>
                                                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{getDateFromISO8601({ isoDate: item.createdAt })}</td>
