@@ -36,6 +36,9 @@ app.use((req, res, next) => {
 // API Routes
 app.use('/api', routes);
 
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
 
 // Database connection and server start
 const PORT = process.env.PORT || 5000;
