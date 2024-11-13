@@ -37,7 +37,7 @@ app.use((req, res, next) => {
 app.use('/api', routes);
 
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.send('Hello World! tested');
 });
 
 // Database connection and server start
