@@ -41,15 +41,15 @@ app.get('/', (req, res) => {
 });
 
 // Database connection and server start
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 sequelize.sync()
     .then(() => {
         console.log('Database connected successfully.');
 
         // Start the server
-        server.listen(PORT, () => {
-            console.log(`Server is running on http://localhost:${PORT}`);
-        });
+        // server.listen(PORT, () => {
+        //     console.log(`Server is running on http://localhost:${PORT}`);
+        // });
     })
     .catch((err) => {
         console.error('Unable to connect to the database:', err);
@@ -62,3 +62,5 @@ io.on('connection', (socket) => {
         console.log('User disconnected', socket.id);
     });
 });
+
+module.exports = app;
