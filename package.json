@@ -1,11 +1,11 @@
 {
   "name": "todo-collaborative-app-express-nextjs-socket.io",
   "version": "1.0.0",
-  "main": "api/server.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js",
-    "start": "node api/server.js"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",

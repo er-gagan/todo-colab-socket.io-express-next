@@ -47,9 +47,9 @@ sequelize.sync()
         console.log('Database connected successfully.');
 
         // Start the server
-        // server.listen(PORT, () => {
-        //     console.log(`Server is running on http://localhost:${PORT}`);
-        // });
+        server.listen(PORT, () => {
+            console.log(`Server is running on http://localhost:${PORT}`);
+        });
     })
     .catch((err) => {
         console.error('Unable to connect to the database:', err);
@@ -63,4 +63,4 @@ io.on('connection', (socket) => {
     });
 });
 
-module.exports = app;
+// module.exports = app;
